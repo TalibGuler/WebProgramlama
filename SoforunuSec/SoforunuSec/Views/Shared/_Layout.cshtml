@@ -6,53 +6,61 @@
     <title>@ViewData["Title"] - SoforunuSec</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/modern-business.css" rel="stylesheet" />
+    <link href="~/css/search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md fixed-top-sm justify-content-start flex-nowrap bg-white navbar-light">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white fixed-top">
             <div class="container">
-                <a class="navbar-brand ml-3" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img class="brand" src="~/images/icon.png" alt="Logo" style="width:130px">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand ml-3" asp-area="" asp-controller="Home" asp-action="Index"><img class="brand" src="~/images/icon.png" alt="Logo" style="width:130px"></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Aramak istediğiniz şoförü giriniz." aria-label="Ara" size="95">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Ara</button>
-                </form>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Search...">
+                            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar navbar-brand" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Şoförler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">İletişim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Giriş Yap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.html">Kayıt Ol</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-md bg-white navbar-light">
-            <div class="navbar-collapse collapse pt-2 pt-md-0 container" id="navbar2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active ml-auto">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
     </header>
+    <br />
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted mt-5">
         <div class="container">
             &copy; 2020 - Şöförünü Seç - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <a> | </a>
+            <a asp-area="" asp-controller="Home" asp-action="BizeUlasin">Bize Ulaşın</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

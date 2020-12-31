@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white fixed-top">
             <div class="container">
-                <a class="navbar-brand ml-3" asp-area="" asp-controller="Home" asp-action="Index"><img class="brand" src="~/images/icon.png" alt="Logo" style="width:130px"></a>
+                <a class="navbar-brand ml-3" asp-area="" asp-controller="Home" asp-action="Index"><img class="brand" src="~/images/icon/icon.png" alt="Logo" style="width:130px"></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,7 +30,7 @@
                 <div class="navbar navbar-brand" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">Hakkımızda</a>
+                            <a class="nav-link" asp-area="" asp-controller="Hakkimizda" asp-action="Index">Hakkımızda</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="services.html">Şoförler</a>
@@ -38,12 +38,31 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">İletişim</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Giriş Yap</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                                <a class="dropdown-item" asp-area="" asp-controller="Sofor" asp-action="Index">Şoförler</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Araba" asp-action="Index">Araba</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Ulke" asp-action="Index">Ulke</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Sehir" asp-action="Index">Sehir</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Dil" asp-action="Index">Dil</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Hakkimizda" asp-action="Index">Hakkımızda</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Iletisim" asp-action="Index">İletişim</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="BizeUlasin" asp-action="Index">Bize Ulaşın</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.html">Kayıt Ol</a>
-                        </li>
+                        <div>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                                <partial name="_LoginPartial" />
+                                <ul class="navbar-nav flex-grow-1">
+                                </ul>
+                            </div>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -57,7 +76,7 @@
     </div>
 
     <footer class="border-top footer text-muted mt-5">
-        <div class="container">
+        <div class="container text-center">
             &copy; 2020 - Şöförünü Seç - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             <a> | </a>
             <a asp-area="" asp-controller="Home" asp-action="BizeUlasin">Bize Ulaşın</a>

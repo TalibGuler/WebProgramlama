@@ -9,14 +9,14 @@ namespace SoforunuSec.Models
     {
         public int Id { get; set; }
 
-        public string adSoyad { get; set; }
+        public string AdSoyad { get; set; }
 
-        public string konu { get; set; }
+        public string Konu { get; set; }
 
-        public string mail { get; set; }
+        public string Mail { get; set; }
 
         public string telefonNo { get; set; }
 
-        public string mesaj { get; set; }
+        public string Mesaj { get; set; }
     }
 }

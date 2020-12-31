@@ -9,12 +9,12 @@ namespace SoforunuSec.Models
     {
         public int Id { get; set; }
 
-        public string baslik { get; set; }
+        public string Baslik { get; set; }
 
-        public string mail { get; set; }
+        public string Mail { get; set; }
 
-        public string telefon { get; set; }
+        public string Telefon { get; set; }
 
-        public string konum { get; set; }
+        public string Konum { get; set; }
     }
 }

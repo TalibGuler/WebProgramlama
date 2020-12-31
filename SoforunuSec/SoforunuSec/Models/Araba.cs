@@ -9,15 +9,18 @@ namespace SoforunuSec.Models
     {
         public int Id { get; set; }
 
-        public string arabaMarka { get; set; }
+        public string Marka { get; set; }
 
-        public float kmYakma { get; set; }
+        public string Model { get; set; }
 
-        public int  yil { get; set; }
+        public int? modelYılı { get; set; }
 
-        public int koltukSayisi { get; set; }
+        public int? koltukSayisi { get; set; }
 
-        public float motorHacmi { get; set; }
+        public double? kmYakit { get; set; }
 
+        public double? motorHacmi { get; set; }
+
+        public string Fotograf { get; set; }
     }
 }

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<SoforunuSec.Models.Araba>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelYılı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.koltukSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kmYakit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.motorHacmi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fotograf)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modelYılı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.koltukSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kmYakit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.motorHacmi)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Fotograf)*@
+                <img src="@Url.Content(item.Fotograf)" class="d-block w-50" asp-append-version="true" />
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

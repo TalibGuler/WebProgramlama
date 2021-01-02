@@ -2,4 +2,4 @@
 
 2020-2021 Dönemi Web Programlama Dersi Proje Ödevi
 
-OĞUZHAN IHLAMUR - ABDULMUTTALİB GÜLER
+OĞUZHAN IHLAMUR - ABDÜLMUTTALİB GÜLER

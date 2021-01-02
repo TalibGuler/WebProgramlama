@@ -9,11 +9,10 @@ namespace SoforunuSec.Models
     {
         public int Id { get; set; }
 
-        public string baslik { get; set; }
+        public string Baslik { get; set; }
 
-        public string fotograf { get; set; }
+        public string Aciklama { get; set; }
 
-        public string aciklama { get; set; }
-
+        public string Fotograf { get; set; }
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoforunuSec", "SoforunuSec\SoforunuSec.csproj", "{F3D4DF44-2772-4FE3-B54F-4B14D9970F72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoforunuSec", "SoforunuSec\SoforunuSec.csproj", "{F34E7FEE-553A-4E82-97E0-41370E5AE644}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F3D4DF44-2772-4FE3-B54F-4B14D9970F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3D4DF44-2772-4FE3-B54F-4B14D9970F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3D4DF44-2772-4FE3-B54F-4B14D9970F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3D4DF44-2772-4FE3-B54F-4B14D9970F72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34E7FEE-553A-4E82-97E0-41370E5AE644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34E7FEE-553A-4E82-97E0-41370E5AE644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34E7FEE-553A-4E82-97E0-41370E5AE644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34E7FEE-553A-4E82-97E0-41370E5AE644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1DA336BD-FDFA-4564-A688-83673E01431D}
+		SolutionGuid = {F5EAB119-7CE8-428B-BE7E-D26C234A7584}
 	EndGlobalSection
 EndGlobal

@@ -219,24 +219,6 @@ namespace SoforunuSec.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("SoforunuSec.Models.Admin", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("kullaniciAdi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sifre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Admin");
-                });
-
             modelBuilder.Entity("SoforunuSec.Models.Araba", b =>
                 {
                     b.Property<int>("Id")
@@ -244,20 +226,26 @@ namespace SoforunuSec.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("arabaMarka")
+                    b.Property<string>("Fotograf")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("kmYakma")
-                        .HasColumnType("real");
+                    b.Property<string>("Marka")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("koltukSayisi")
+                    b.Property<string>("Model")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double?>("kmYakit")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("koltukSayisi")
                         .HasColumnType("int");
 
-                    b.Property<float>("motorHacmi")
-                        .HasColumnType("real");
-
-                    b.Property<int>("yil")
+                    b.Property<int?>("modelYılı")
                         .HasColumnType("int");
+
+                    b.Property<double?>("motorHacmi")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -271,21 +259,36 @@ namespace SoforunuSec.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("baslik")
+                    b.Property<string>("Baslik")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("konum")
+                    b.Property<string>("Konum")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("mail")
+                    b.Property<string>("Mail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("telefon")
+                    b.Property<string>("Telefon")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("BizeUlasin");
+                });
+
+            modelBuilder.Entity("SoforunuSec.Models.Dil", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("dilAd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dil");
                 });
 
             modelBuilder.Entity("SoforunuSec.Models.Hakkimizda", b =>
@@ -295,13 +298,13 @@ namespace SoforunuSec.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("aciklama")
+                    b.Property<string>("Aciklama")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("baslik")
+                    b.Property<string>("Baslik")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("fotograf")
+                    b.Property<string>("Fotograf")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -316,16 +319,16 @@ namespace SoforunuSec.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("adSoyad")
+                    b.Property<string>("AdSoyad")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("konu")
+                    b.Property<string>("Konu")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("mail")
+                    b.Property<string>("Mail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("mesaj")
+                    b.Property<string>("Mesaj")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("telefonNo")
@@ -334,6 +337,26 @@ namespace SoforunuSec.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Iletisim");
+                });
+
+            modelBuilder.Entity("SoforunuSec.Models.Sehir", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("sehirAd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ulkeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ulkeId");
+
+                    b.ToTable("Sehir");
                 });
 
             modelBuilder.Entity("SoforunuSec.Models.Sofor", b =>
@@ -355,17 +378,47 @@ namespace SoforunuSec.Data.Migrations
                     b.Property<int?>("arabaId")
                         .HasColumnType("int");
 
-                    b.Property<int>("kazaSayisi")
+                    b.Property<int?>("dilId")
                         .HasColumnType("int");
 
-                    b.Property<int>("yas")
+                    b.Property<DateTime>("dogumTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("kazaSayisi")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("sehirId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ulkeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("arabaId");
 
+                    b.HasIndex("dilId");
+
+                    b.HasIndex("sehirId");
+
+                    b.HasIndex("ulkeId");
+
                     b.ToTable("Sofor");
+                });
+
+            modelBuilder.Entity("SoforunuSec.Models.Ulke", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ulkeAd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ulke");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -419,11 +472,30 @@ namespace SoforunuSec.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SoforunuSec.Models.Sehir", b =>
+                {
+                    b.HasOne("SoforunuSec.Models.Ulke", "Ulke")
+                        .WithMany()
+                        .HasForeignKey("ulkeId");
+                });
+
             modelBuilder.Entity("SoforunuSec.Models.Sofor", b =>
                 {
-                    b.HasOne("SoforunuSec.Models.Araba", "araba")
+                    b.HasOne("SoforunuSec.Models.Araba", "Araba")
                         .WithMany()
                         .HasForeignKey("arabaId");
+
+                    b.HasOne("SoforunuSec.Models.Dil", "Dil")
+                        .WithMany()
+                        .HasForeignKey("dilId");
+
+                    b.HasOne("SoforunuSec.Models.Sehir", "Sehir")
+                        .WithMany()
+                        .HasForeignKey("sehirId");
+
+                    b.HasOne("SoforunuSec.Models.Ulke", "Ulke")
+                        .WithMany()
+                        .HasForeignKey("ulkeId");
                 });
 #pragma warning restore 612, 618
         }

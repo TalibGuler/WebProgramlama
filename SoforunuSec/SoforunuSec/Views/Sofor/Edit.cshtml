@@ -1,0 +1,75 @@
+﻿@model SoforunuSec.Models.Sofor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Sofor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="adSoyad" class="control-label"></label>
+                <input asp-for="adSoyad" class="form-control" />
+                <span asp-validation-for="adSoyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dogumTarihi" class="control-label"></label>
+                <input asp-for="dogumTarihi" class="form-control" />
+                <span asp-validation-for="dogumTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kazaSayisi" class="control-label"></label>
+                <input asp-for="kazaSayisi" class="form-control" />
+                <span asp-validation-for="kazaSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cinsiyet" class="control-label"></label>
+                <select asp-for="Cinsiyet" asp-items="Html.GetEnumSelectList<Cinsiyet>()" class="form-control"></select>
+                <span asp-validation-for="Cinsiyet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fotograf" class="control-label"></label>
+                @*<input asp-for="Fotograf" class="form-control" />*@
+                <input type="file" class="form-control" name="files" />
+                <span asp-validation-for="Fotograf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="arabaId" class="control-label"></label>
+                <select asp-for="arabaId" class="form-control" asp-items="ViewBag.arabaId"></select>
+                <span asp-validation-for="arabaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dilId" class="control-label"></label>
+                <select asp-for="dilId" class="form-control" asp-items="ViewBag.dilId"></select>
+                <span asp-validation-for="dilId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ulkeId" class="control-label"></label>
+                <select asp-for="ulkeId" class="form-control" asp-items="ViewBag.ulkeId"></select>
+                <span asp-validation-for="ulkeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sehirId" class="control-label"></label>
+                <select asp-for="sehirId" class="form-control" asp-items="ViewBag.sehirId"></select>
+                <span asp-validation-for="sehirId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
